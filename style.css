@@ -617,6 +617,64 @@ nav {
 }
 
 /* ══════════════════════════════
+   SIGNUP SECTION
+══════════════════════════════ */
+.signup-section {
+  padding: var(--space-3xl) var(--space-2xl);
+  background: #fff;
+}
+.signup-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid #EBEBEB;
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow);
+}
+.signup-form {
+  display: grid;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+.signup-form label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.signup-input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-xs);
+}
+.signup-input-group input {
+  border: 1px solid #DADADA;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  width: 100%;
+}
+.signup-input-group input:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 0 4px rgba(245,196,0,0.18);
+}
+.signup-note {
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+.signup-status {
+  font-size: 0.95rem;
+  color: var(--green);
+  min-height: 1.3rem;
+}
+@media (max-width: 700px) {
+  .signup-input-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════
    CTA SECTION
 ══════════════════════════════ */
 .cta-section {

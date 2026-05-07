@@ -179,6 +179,25 @@
   </div>
 </section>
 
+<!-- ══ SIGNUP SECTION ══ -->
+<section class="signup-section">
+  <div class="signup-card">
+    <div class="section-label">Stay connected</div>
+    <h2 class="section-title">Never miss a local meetup</h2>
+    <p>Sign up for email updates to receive event previews, community highlights, and mom-approved tips straight to your inbox.</p>
+
+    <form class="signup-form" id="signupForm" action="#" method="post" onsubmit="handleSignup(event)">
+      <label for="signupEmail">Email address</label>
+      <div class="signup-input-group">
+        <input type="email" id="signupEmail" name="email" placeholder="you@example.com" required>
+        <button class="btn-primary" type="submit">Sign up</button>
+      </div>
+      <p class="signup-note">No spam. Unsubscribe anytime.</p>
+      <p class="signup-status" id="signupStatus" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
 <!-- ══ TESTIMONIALS ══ -->
 <section class="testimonials">
   <div class="section-label">What moms are saying</div>
@@ -244,6 +263,23 @@
     btn.querySelector('.ham-open').style.display  = '';
     btn.querySelector('.ham-close').style.display = 'none';
     document.body.style.overflow = '';
+  }
+
+  function handleSignup(event) {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value.trim();
+    const status = document.getElementById('signupStatus');
+
+    if (!email) {
+      status.textContent = 'Please enter a valid email address.';
+      status.style.color = 'var(--pink)';
+      return;
+    }
+
+    status.textContent = `Thanks for joining MomCircle updates, ${email}!`;
+    status.style.color = 'var(--green)';
+    form.reset();
   }
 </script>
 </body>
