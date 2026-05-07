@@ -594,10 +594,11 @@ nav {
 .testimonial-avatar {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   margin: 0 auto var(--space-md);
   display: block;
   border: 3px solid var(--amber-pale);
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .testimonial-quote {
