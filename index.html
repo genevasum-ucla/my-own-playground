@@ -1,53 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MomCircle Community</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="topbar">
-        <div class="brand">
-          <span class="brand-name">MomCircle</span>
-          <span class="brand-subtitle">Community</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MomCircle Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="momcircle.css" />
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-logo">
+    <span>MomCircle</span>
+    <span>Community</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Feed</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Meetups</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path class="ham-open" d="M3 6h18M3 12h18M3 18h18"/>
+        <path class="ham-close" d="M6 6l12 12M6 18L18 6" style="display:none"/>
+      </svg>
+    </button>
+    <button class="nav-search" aria-label="Search">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+    <button class="btn-plan">Plan</button>
+  </div>
+</nav>
+
+<!-- Mobile nav drawer -->
+<nav class="nav-mobile" id="navMobile" aria-hidden="true">
+  <a href="#" onclick="closeMenu()">Home</a>
+  <a href="#" onclick="closeMenu()">Feed</a>
+  <a href="#" onclick="closeMenu()">About</a>
+  <a href="#" onclick="closeMenu()">Meetups</a>
+  <button class="btn-plan" style="font-size:1.1rem;padding:0.8rem 2.5rem;" onclick="closeMenu()">Plan a meetup</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="dot"></span> 2,400+ moms in your area
+    </div>
+    <h1 class="hero-title">Connect with <em>moms</em><br>near you</h1>
+    <p class="hero-desc">MomCircle brings local moms together — for coffee, playdates, advice, and everything in between. Your community is waiting.</p>
+
+    <div class="hero-availability">
+      <div class="avail-label">Availability</div>
+      <div class="avail-time">Mon – Sun, 6 AM – 9 PM</div>
+      <div class="avail-active">
+        <div class="pulse"></div>
+        <span>Active now &nbsp;<strong>6 AM – 9 PM</strong></span>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <button class="btn-primary">Join the Circle</button>
+      <button class="btn-secondary">Explore Meetups</button>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="map-wrap">
+      <div class="map-blob">
+        <svg class="blob-svg" viewBox="0 0 520 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M60 140 C80 80, 160 60, 220 100 C240 115, 230 160, 200 200 C170 240, 100 260, 80 300 C55 350, 70 420, 100 450 C130 480, 180 490, 200 470 C220 450, 200 400, 220 370 C240 340, 300 340, 320 320 C340 300, 320 260, 300 240 C280 220, 300 160, 340 160 C380 160, 440 200, 460 250 C490 320, 470 420, 430 450 C390 480, 330 470, 300 460 C270 450, 240 430, 200 440 C160 450, 120 480, 100 470" fill="#EDE8D0" opacity="0.5"/>
+          <path d="M200 80 C260 50, 360 70, 420 130 C480 190, 500 290, 470 370 C440 450, 360 490, 280 480 C200 470, 130 420, 110 350 C90 280, 120 180, 200 80Z" fill="#F5C400" opacity="0.9"/>
+          <path d="M180 480 C200 420, 220 360, 260 310 C300 260, 340 240, 380 200 C400 175, 410 145, 420 130" fill="none" stroke="white" stroke-width="3" stroke-dasharray="8 5" opacity="0.6"/>
+        </svg>
+
+        <div class="map-pin pin-1" aria-hidden="true">
+          <div class="pin-head"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div class="pin-shadow"></div>
         </div>
-
-        <nav class="main-nav" aria-label="Primary navigation">
-          <a href="#">Home</a>
-          <a href="#">Feed</a>
-          <a href="#">About</a>
-          <a href="#">Meetups</a>
-        </nav>
-
-        <div class="header-actions">
-          <button class="icon-button" aria-label="Search">&#x1F50D;</button>
-          <button class="primary-button">Plan</button>
+        <div class="map-pin pin-2" aria-hidden="true">
+          <div class="pin-head"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div class="pin-shadow"></div>
+        </div>
+        <div class="map-pin pin-3" aria-hidden="true">
+          <div class="pin-head"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="pin-shadow"></div>
+        </div>
+        <div class="map-pin pin-4" aria-hidden="true">
+          <div class="pin-head"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="pin-shadow"></div>
+        </div>
+        <div class="map-pin pin-5" aria-hidden="true">
+          <div class="pin-head"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="pin-shadow"></div>
+        </div>
+        <div class="map-pin pin-6" aria-hidden="true">
+          <div class="pin-head"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="pin-shadow"></div>
+        </div>
+        <div class="map-pin pin-7" aria-hidden="true">
+          <div class="pin-head"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div>
+          <div class="pin-shadow"></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <section class="hero-panel">
-        <div class="hero-copy">
-          <h1>MomCircle Community</h1>
-          <div class="info-grid">
-            <div class="info-card">
-              <span class="info-label">Availability</span>
-              <strong>Mon - Sun, 6 AM - 9 PM</strong>
-            </div>
-            <div class="info-card">
-              <span class="info-label">Active now</span>
-              <strong>6 AM - 9 PM</strong>
-            </div>
-          </div>
-        </div>
+<!-- ══ STATS ══ -->
+<div class="stats" role="list" aria-label="Community stats">
+  <div class="stat-item" role="listitem"><div class="stat-num">12K+</div><div class="stat-label">Moms in the community</div></div>
+  <div class="stat-item" role="listitem"><div class="stat-num">340+</div><div class="stat-label">Meetups planned this month</div></div>
+  <div class="stat-item" role="listitem"><div class="stat-num">48</div><div class="stat-label">Cities &amp; neighborhoods</div></div>
+  <div class="stat-item" role="listitem"><div class="stat-num">4.9★</div><div class="stat-label">Average app rating</div></div>
+</div>
 
-        <div class="hero-illustration">
-          <img src="header.png" alt="MomCircle map illustration" />
-        </div>
-      </section>
-    </header>
+<!-- ══ FEATURES ══ -->
+<section class="features">
+  <div class="section-label">Why MomCircle</div>
+  <h2 class="section-title">Everything you need to <em>find your people</em></h2>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon" aria-hidden="true">🗺️</div>
+      <h3>Local Map View</h3>
+      <p>See moms in your neighborhood and nearby areas. Filter by availability, interests, or age of kids.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon" aria-hidden="true">📅</div>
+      <h3>Plan Meetups</h3>
+      <p>Organize coffee mornings, park playdates, and mom nights out with a few taps. RSVPs handled for you.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon" aria-hidden="true">💬</div>
+      <h3>Community Feed</h3>
+      <p>Share tips, ask questions, and celebrate wins with your local circle. Real conversations, real support.</p>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
-  </body>
+<!-- ══ MEETUPS ══ -->
+<section class="meetups-section">
+  <div class="meetups-inner">
+    <div class="meetups-text">
+      <div class="section-label">Upcoming near you</div>
+      <h2 class="section-title">Real <em>gatherings</em>,<br>real friendships</h2>
+      <p>Browse and join local meetups — or host your own. From cozy coffee chats to big park days, every event is mom-organized and mom-approved.</p>
+      <button class="btn-primary">See all meetups</button>
+    </div>
+    <div class="meetup-cards">
+      <div class="meetup-card">
+        <div class="meetup-date"><div class="md">12</div><div class="mm">May</div></div>
+        <div class="meetup-info"><h4>Morning Coffee &amp; Chat ☕</h4><span>Rosewood Café · 9:00 AM · 8 going</span></div>
+        <div class="meetup-dot" style="background: var(--amber)"></div>
+      </div>
+      <div class="meetup-card">
+        <div class="meetup-date"><div class="md">15</div><div class="mm">May</div></div>
+        <div class="meetup-info"><h4>Toddler Playdate at Elm Park 🌳</h4><span>Elm Park · 10:30 AM · 14 going</span></div>
+        <div class="meetup-dot" style="background: var(--green)"></div>
+      </div>
+      <div class="meetup-card">
+        <div class="meetup-date"><div class="md">19</div><div class="mm">May</div></div>
+        <div class="meetup-info"><h4>Mom's Night Out 🍷</h4><span>The Vine Bar · 7:00 PM · 11 going</span></div>
+        <div class="meetup-dot" style="background: var(--purple)"></div>
+      </div>
+      <div class="meetup-card">
+        <div class="meetup-date"><div class="md">22</div><div class="mm">May</div></div>
+        <div class="meetup-info"><h4>Baby Yoga &amp; Wellness 🧘</h4><span>Studio Sol · 9:00 AM · 6 going</span></div>
+        <div class="meetup-dot" style="background: var(--teal)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="section-label">Get started today</div>
+  <h2 class="section-title">Your <em>circle</em> is waiting for you</h2>
+  <p>Join thousands of moms building real friendships right in their neighborhood.</p>
+  <button class="btn-cta-main">Join MomCircle — it's free</button>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span>© 2026 MomCircle Community · All rights reserved</span>
+  <div>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(btn) {
+    const drawer = document.getElementById('navMobile');
+    const isOpen = drawer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    drawer.setAttribute('aria-hidden', !isOpen);
+    btn.querySelector('.ham-open').style.display  = isOpen ? 'none' : '';
+    btn.querySelector('.ham-close').style.display = isOpen ? ''     : 'none';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  function closeMenu() {
+    const drawer = document.getElementById('navMobile');
+    const btn    = document.querySelector('.nav-hamburger');
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.querySelector('.ham-open').style.display  = '';
+    btn.querySelector('.ham-close').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
 </html>
