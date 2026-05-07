@@ -1,8 +1,53 @@
-<style>
-    @import url('style.css');
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MomCircle Community</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <div class="brand">
+          <span class="brand-name">MomCircle</span>
+          <span class="brand-subtitle">Community</span>
+        </div>
 
-<h1>test!</h1>
-<h2>This is a test</h2>
-<!-- add an image -->
-<img src="images/test.png" alt="image" />
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#">Home</a>
+          <a href="#">Feed</a>
+          <a href="#">About</a>
+          <a href="#">Meetups</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button" aria-label="Search">&#x1F50D;</button>
+          <button class="primary-button">Plan</button>
+        </div>
+      </div>
+
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <h1>MomCircle Community</h1>
+          <div class="info-grid">
+            <div class="info-card">
+              <span class="info-label">Availability</span>
+              <strong>Mon - Sun, 6 AM - 9 PM</strong>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Active now</span>
+              <strong>6 AM - 9 PM</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <img src="header.png" alt="MomCircle map illustration" />
+        </div>
+      </section>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>
