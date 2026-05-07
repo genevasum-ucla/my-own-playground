@@ -629,8 +629,14 @@ nav {
   background: var(--card-bg);
   border: 1px solid #EBEBEB;
   border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
+  padding: var(--space-2xl) var(--space-3xl);
   box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.signup-card > p {
+  max-width: 650px;
+  color: var(--text-mid);
+  line-height: 1.7;
 }
 .signup-form {
   display: grid;
@@ -638,6 +644,7 @@ nav {
   margin-top: var(--space-md);
 }
 .signup-form label {
+  display: block;
   font-weight: 600;
   color: var(--text-dark);
 }
@@ -653,11 +660,15 @@ nav {
   font-size: 1rem;
   color: var(--text-dark);
   width: 100%;
+  background: #FCFCFC;
 }
 .signup-input-group input:focus {
   outline: none;
   border-color: var(--amber);
   box-shadow: 0 0 0 4px rgba(245,196,0,0.18);
+}
+.signup-input-group button {
+  min-width: 160px;
 }
 .signup-note {
   font-size: 0.88rem;
